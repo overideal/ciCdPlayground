@@ -21,6 +21,7 @@ pipeline {
             steps {
                 sh 'yarn test'
                 sh 'yarn test:e2e'
+                junit stdioRetention: 'ALL', testResults: '**/reports/**/*.xml'
             }
         }
 
